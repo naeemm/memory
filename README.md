@@ -1,10 +1,10 @@
 
-Food EAN Lookup Finder
+<H1 style="color:gold">Food EAN Lookup Finder</H1>
 ======================
 
 The program is developed in Eclipse Neon (JavaSE 1.8). I have used maven so no need to add any jar library. Program input setting can be observed / altered in config.properties. There is no url or path hard coded except written in this java standard configuration file.  
 
-# Security Instructions
+<H2 style="color:gold">Security Instructions</H2>
 
 The security instructions are related to only https web site. Without security measures, the java library can't open the secured connection. I have provided two means:
 
@@ -25,7 +25,7 @@ http://superuser.com/questions/97201/how-to-save-a-remote-server-ssl-certificate
  
  http://stackoverflow.com/questions/7744075/how-to-connect-via-https-using-jsoup
 
-# Input file
+<H2 style="color:gold">Input file</H2>
 
 We have been provided grocery.txt. It contains almost 7 thousand food entries. Most of the product names (entries) were mixed with seller name (auchan, carrefour etc.) and also the product size/capacity specification. In this format, the website returns zero results. Hence, the current format of the products forced us to make some pre processing. We sought following pre processing:
 
@@ -35,12 +35,12 @@ We have been provided grocery.txt. It contains almost 7 thousand food entries. M
 4. In case, the serialized file is not found (first time). The system creates it for successive run. 
 5. Sampling of the product list. It is useful for immediate testing. it is implemented in a single function available in Start.java. the fraction argument in this function is a divider to the size of the list.
 
-# Output file
+<H2 style="color:gold">Output file</H2>
 
 If any service finds the result for a given product name, the result is 1 to many records. The system saves all available information of each of the result in a separate file. The output file is a json format while giving the EAN to the file. One display function enables us to draw out the json text for all of the products.
 
 
-# Functionality of the Program
+<H2 style="color:gold">Functionality of the Program</H2>
 
 We have designed the principle lookupservice. The start class calls the lookup service. This service calls 1 to many database services (service1, service2..) . The program (as instructed) utilizes the multithreaded and Future technology of java. There are two modes of this program
 
@@ -48,7 +48,7 @@ We have designed the principle lookupservice. The start class calls the lookup s
 
 2. Asynchronus: In this approach, bulk number of assignments are submitted to first service. The service issues multiple number of threads and store its result in Future<T> structure which is coherent with the multithreading approach. Those products which are not found are submitted to second service and so on.      
 
-# How to add a new service
+<H2 style="color:gold">How to add a new service</H2>
 
 We have provided one interface and one super class for any new service. Following steps are useful while adding a novel service.
 1. Create a new java file like service1.java or service2.java
